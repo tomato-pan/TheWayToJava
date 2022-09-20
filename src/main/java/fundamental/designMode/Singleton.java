@@ -25,4 +25,8 @@ public class Singleton {
         }
 
     }
+
+    public static void main(String[] args) {
+        Singleton1.INSTANCE.test();
+    }
 }
