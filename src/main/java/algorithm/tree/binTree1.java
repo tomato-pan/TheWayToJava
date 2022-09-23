@@ -50,6 +50,28 @@ public class binTree1 {
         inOrder(root.right);
     }
 
+    // 中序打印迭代版本
+    public List<Integer> inOrderTravel(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            if (cur!=null){
+                stack.push(cur);
+                cur = cur.left;
+            }
+            else {
+                cur = stack.pop();
+                res.add(cur.val);
+                cur = cur.right;
+            }
+        }
+        return res;
+    }
+
     // 后序打印
     public void postOrder(TreeNode root) {
         if (root == null) return;
@@ -58,7 +80,7 @@ public class binTree1 {
         System.out.println(root.val);
     }
 
-    // 前序打印迭代版本
+    // 后序打印迭代版本
     public List<Integer> postOrderTravel(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) {
@@ -130,5 +152,6 @@ public class binTree1 {
 //        a1.preOrder(a1.invertTree(t1));
         System.out.println(a1.preOrderTravel(t1));
         System.out.println(a1.postOrderTravel(t1));
+        System.out.println(a1.inOrderTravel(t1));
     }
 }
