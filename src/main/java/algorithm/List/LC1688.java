@@ -24,5 +24,4 @@ public class LC1688 {
         return ans;
     }
 
-
 }
