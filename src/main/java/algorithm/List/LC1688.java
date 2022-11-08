@@ -1,5 +1,7 @@
 package algorithm.List;
 
+import java.util.Arrays;
+
 public class LC1688 {
     public int maxRepeating(String sequence, String word) {
         int count = 0;
@@ -21,4 +23,6 @@ public class LC1688 {
         }
         return ans;
     }
+
+
 }
