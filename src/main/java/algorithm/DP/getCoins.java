@@ -1,10 +1,11 @@
 package algorithm.DP;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
 
+import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class getCoins {
     public static int solution(int[] coins, Integer target) {
@@ -40,9 +41,43 @@ public class getCoins {
         return fn[K];
     }
 
+    public static int getSums(int[] list, int k) {
+        int[] fn = new int[k + 1];
+        fn[0] = 0;
+        int start = 0;
+        int n = list.length;
+        for (int i = 1; i <= k; i++) {
+            fn[i] = Math.max(list[start] + fn[i - 1], list[n - i] + fn[i - 1]);
+            if (list[0] > list[n - 1]) {
+                start += 1;
+            } else {
+                n = n - 1;
+            }
+        }
+        return fn[k];
+    }
+
+
+    public static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int count = 0;
+        Map<String ,Integer> ruleMap = new HashMap();
+        ruleMap.put("type",0);
+        ruleMap.put("color",1);
+        ruleMap.put("name",2);
+        for (List<String> item : items) {
+            if (item.get(ruleMap.get(ruleKey)).equals(ruleValue)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
     public static void main(String[] args) {
 //        System.out.println(solution(new int[]{1, 2, 5}, 21));
 
         System.out.println(solution1(new int[]{5, 4, 1, 2, 6}, 2));
+        System.out.println(solution(new int[]{1, 2, 5}, 21));
+        System.out.println(getSums(new int[]{5, 4, 3, 2, 1}, 2));
     }
 }
