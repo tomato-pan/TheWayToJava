@@ -1,5 +1,7 @@
 package algorithm.slideWindows;
 
+import org.omg.CORBA.MARSHAL;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,9 +24,22 @@ public class LC3 {
 
     }
 
+    public static int lengthOfLongestSubstring1(String s) {
+        int [] charMap = new int[256];
+        int start = 0, res =0;
+        for(int end = 0; end < s.length(); end++){
+            int index = s.charAt(end);
+            start = Math.max(start,charMap[index]);
+            res = Math.max(res, end - start + 1);
+            charMap[index]=end+1;
+            System.out.println(res+","+start+","+end);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
-        System.out.println(lengthOfLongestSubstring("pwwkew"));
+        System.out.println(lengthOfLongestSubstring1("pwwkew"));
         System.out.println(lengthOfLongestSubstring("bbbbb"));
         System.out.println(lengthOfLongestSubstring("aab"));
         System.out.println(lengthOfLongestSubstring("   "));
