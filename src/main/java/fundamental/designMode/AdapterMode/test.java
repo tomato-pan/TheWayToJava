@@ -1,6 +1,8 @@
 package fundamental.designMode.AdapterMode;
 
 import com.alibaba.fastjson.JSON;
+import fundamental.designMode.AdapterMode.impl.InsiderOrderService;
+import fundamental.designMode.AdapterMode.impl.POPOrderAdapterServiceImpl;
 import fundamental.designMode.AdapterMode.mq.createAccount;
 import fundamental.designMode.AdapterMode.mq.orderMq;
 
@@ -42,6 +44,12 @@ public class test {
 
         System.out.println("mq.orderMq(适配前)" + orderMq.toString());
         System.out.println("mq.orderMq(适配后)" + JSON.toJSONString(rebateInfo02));
+
+        OrderAdapterService popOrderAdapterService = new POPOrderAdapterServiceImpl();
+        System.out.println("判断首单，接口适配(POP)：" + popOrderAdapterService.isFirst("100001"));
+
+        OrderAdapterService insideOrderService = new InsiderOrderService();
+        System.out.println("判断首单，接口适配(自营)：" + insideOrderService.isFirst("100001"));
     }
 
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
