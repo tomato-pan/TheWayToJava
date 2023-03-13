@@ -7,6 +7,16 @@ public class createAccount {
     private String address;     // 开户地
     private Date accountDate;   // 开户时间
 
+    @Override
+    public String toString() {
+        return "createAccount{" +
+                "number='" + number + '\'' +
+                ", address='" + address + '\'' +
+                ", accountDate=" + accountDate +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
+
     public String getNumber() {
         return number;
     }

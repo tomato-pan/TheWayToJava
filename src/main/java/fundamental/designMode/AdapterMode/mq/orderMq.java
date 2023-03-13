@@ -7,6 +7,16 @@ public class orderMq {
     private String sku;           // 商品
     private String orderId;       // 订单ID
 
+    @Override
+    public String toString() {
+        return "orderMq{" +
+                "uid='" + uid + '\'' +
+                ", sku='" + sku + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", createOrderTime=" + createOrderTime +
+                '}';
+    }
+
     public String getUid() {
         return uid;
     }

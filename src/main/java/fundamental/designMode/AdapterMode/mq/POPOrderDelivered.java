@@ -10,6 +10,19 @@ public class POPOrderDelivered {
     private Date orderTime; // 下单时间
     private Date sku;       // 商品
     private Date skuName;   // 商品名称
+
+    @Override
+    public String toString() {
+        return "POPOrderDelivered{" +
+                "uId='" + uId + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", orderTime=" + orderTime +
+                ", sku=" + sku +
+                ", skuName=" + skuName +
+                ", decimal=" + decimal +
+                '}';
+    }
+
     private BigDecimal decimal; // 金额
 
     public String getuId() {
