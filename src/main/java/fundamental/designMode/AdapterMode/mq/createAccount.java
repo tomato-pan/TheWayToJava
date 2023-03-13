@@ -2,7 +2,7 @@ package fundamental.designMode.AdapterMode.mq;
 
 import java.util.Date;
 
-public class creatAccount {
+public class createAccount {
     private String number;      // 开户编号
     private String address;     // 开户地
     private Date accountDate;   // 开户时间
