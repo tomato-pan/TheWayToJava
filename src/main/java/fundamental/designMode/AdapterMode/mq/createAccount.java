@@ -1,5 +1,6 @@
 package fundamental.designMode.AdapterMode.mq;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class createAccount {
@@ -9,11 +10,11 @@ public class createAccount {
 
     @Override
     public String toString() {
-        return "createAccount{" +
-                "number='" + number + '\'' +
-                ", address='" + address + '\'' +
-                ", accountDate=" + accountDate +
-                ", desc='" + desc + '\'' +
+        return "{" +
+                "number:'" + number + '\'' +
+                ", address:'" + address + '\'' +
+                ", accountDate:" + accountDate.getTime() +
+                ", desc:'" + desc + '\'' +
                 '}';
     }
 

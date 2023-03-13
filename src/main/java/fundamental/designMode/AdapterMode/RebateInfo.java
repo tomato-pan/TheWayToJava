@@ -5,7 +5,7 @@ import java.util.Date;
 public class RebateInfo {
     private String userId;  // 用户ID
     private String bizId;   // 业务ID
-    private Date bizTime;   // 业务时间
+    private String bizTime;   // 业务时间
     private String desc;    // 业务描述
 
     public String getUserId() {
@@ -24,11 +24,11 @@ public class RebateInfo {
         this.bizId = bizId;
     }
 
-    public Date getBizTime() {
+    public String getBizTime() {
         return bizTime;
     }
 
-    public void setBizTime(Date bizTime) {
+    public void setBizTime(String bizTime) {
         this.bizTime = bizTime;
     }
 

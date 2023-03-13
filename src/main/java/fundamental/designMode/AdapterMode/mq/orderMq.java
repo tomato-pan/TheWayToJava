@@ -9,11 +9,11 @@ public class orderMq {
 
     @Override
     public String toString() {
-        return "orderMq{" +
-                "uid='" + uid + '\'' +
-                ", sku='" + sku + '\'' +
-                ", orderId='" + orderId + '\'' +
-                ", createOrderTime=" + createOrderTime +
+        return "{" +
+                "uid:'" + uid + '\'' +
+                ", sku:'" + sku + '\'' +
+                ", orderId:'" + orderId + '\'' +
+                ", createOrderTime:" + createOrderTime.getTime() +
                 '}';
     }
 

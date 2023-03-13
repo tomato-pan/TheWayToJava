@@ -22,8 +22,8 @@ public class test {
         link01.put("bizId", "number");
         link01.put("bizTime", "accountDate");
         link01.put("desc", "desc");
-        RebateInfo rebateInfo01 = MQAdapter.filter(create_account.toString(), link01);
         System.out.println("mq.create_account(适配前)" + create_account.toString());
+        RebateInfo rebateInfo01 = MQAdapter.filter(create_account.toString(), link01);
         System.out.println("mq.create_account(适配后)" + JSON.toJSONString(rebateInfo01));
 
         System.out.println("");
