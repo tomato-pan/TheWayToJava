@@ -35,7 +35,7 @@ public class LC3 {
         return res;
     }
 
-    public static int lengthOfLongestSubstring1(String s) {
+    public static int lengthOfLongestSubstring2(String s) {
         int [] charMap = new int[256];
         int start = 0, res =0;
         for(int end = 0; end < s.length(); end++){
@@ -50,7 +50,7 @@ public class LC3 {
 
     public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
-        System.out.println(lengthOfLongestSubstring1("pwwkew"));
+        System.out.println(lengthOfLongestSubstring2("pwwkew"));
         System.out.println(lengthOfLongestSubstring("bbbbb"));
         System.out.println(lengthOfLongestSubstring("aab"));
         System.out.println(lengthOfLongestSubstring("   "));

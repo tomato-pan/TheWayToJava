@@ -1,9 +1,5 @@
 package fundamental.designMode.combineMode;
 
-import com.sun.org.slf4j.internal.LoggerFactory;
-
-import java.util.logging.Logger;
-
 public class EngineController {
 
     public String process(final String userId, final String userSex, final int userAge) {

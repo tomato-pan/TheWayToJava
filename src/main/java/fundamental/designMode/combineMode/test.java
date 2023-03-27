@@ -168,6 +168,6 @@ public class test {
     }
 
     public static void main(String[] args) {
-        test_EngineController();
+        test_EEE();
     }
 }

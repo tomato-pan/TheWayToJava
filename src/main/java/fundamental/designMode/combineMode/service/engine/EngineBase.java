@@ -5,10 +5,14 @@ import fundamental.designMode.combineMode.model.vo.EngineResult;
 import fundamental.designMode.combineMode.model.vo.TreeNode;
 import fundamental.designMode.combineMode.model.vo.TreeRoot;
 import fundamental.designMode.combineMode.service.logic.LogicFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
+
 public abstract class EngineBase extends EngineConfig implements IEngine {
+    private static final Logger logger = LoggerFactory.getLogger(EngineBase.class);
 
     @Override
     public abstract EngineResult process(Long treeId, String userId, TreeRich treeRich, Map<String, String> decisionMatter);
@@ -26,7 +30,8 @@ public abstract class EngineBase extends EngineConfig implements IEngine {
             String matterValue = logicFilter.matterValue(treeId, userId, decisionMatter);
             Long nextNode = logicFilter.filter(matterValue, treeNodeInfo.getTreeNodeLinkList());
             treeNodeInfo = treeNodeMap.get(nextNode);
-            System.out.println("决策树引擎=>{} userId：{} treeId：{} treeNode：{} ruleKey：{} matterValue：{}"+ treeRoot.getTreeName()+ userId+ treeId+treeNodeInfo.getTreeNodeId()+ruleKey+matterValue);
+            logger.info("决策树引擎=>{} userId：{} treeId：{} treeNode：{} ruleKey：{} matterValue：{}",
+                    treeRoot.getTreeName(), userId,  String.valueOf(treeId), String.valueOf(treeNodeInfo.getTreeNodeId()), ruleKey, matterValue);
         }
         return treeNodeInfo;
     }
