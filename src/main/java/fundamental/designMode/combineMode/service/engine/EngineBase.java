@@ -31,7 +31,7 @@ public abstract class EngineBase extends EngineConfig implements IEngine {
             Long nextNode = logicFilter.filter(matterValue, treeNodeInfo.getTreeNodeLinkList());
             treeNodeInfo = treeNodeMap.get(nextNode);
             logger.info("决策树引擎=>{} userId：{} treeId：{} treeNode：{} ruleKey：{} matterValue：{}",
-                    treeRoot.getTreeName(), userId,  String.valueOf(treeId), String.valueOf(treeNodeInfo.getTreeNodeId()), ruleKey, matterValue);
+                    treeRoot.getTreeName(), userId,  treeId, treeNodeInfo.getTreeNodeId(), ruleKey, matterValue);
         }
         return treeNodeInfo;
     }
