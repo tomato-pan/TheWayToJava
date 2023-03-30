@@ -6,21 +6,18 @@ public class Singleton {
     public Singleton() {
     }
 
-    public static Singleton getInstance() {
-        if (null != instance) {
-            return instance;
-        }
-        synchronized (Singleton.class) {
-            if (null == instance) {
-                instance = new Singleton();
-            }
+    public synchronized static Singleton getInstance() {
+        if (null == instance) {
+            instance = new Singleton();
         }
         return instance;
     }
+
     public enum Singleton1 {
 
         INSTANCE;
-        public void test(){
+
+        public void test() {
             System.out.println("hi~");
         }
 
@@ -28,5 +25,8 @@ public class Singleton {
 
     public static void main(String[] args) {
         Singleton1.INSTANCE.test();
+        Singleton s = new Singleton();
+        Singleton s1 = new Singleton();
+        System.out.println(s==s1);
     }
 }

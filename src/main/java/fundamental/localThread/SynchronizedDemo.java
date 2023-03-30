@@ -6,34 +6,28 @@ public class SynchronizedDemo {
     public static void main(String[] args) {
         BankAccount myAccount = new BankAccount("accountOfMG",10000.00);
         for(int i=0;i<100;i++){
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        int var = new Random().nextInt(100);
-                        Thread.sleep(var);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    double deposit = myAccount.deposit(1000.00);
-                    System.out.println(Thread.currentThread().getName()+" balance:"+deposit);
+            new Thread(() -> {
+                try {
+                    int var = new Random().nextInt(100);
+                    Thread.sleep(var);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                double deposit = myAccount.deposit(1000.00);
+                System.out.println(Thread.currentThread().getName()+" balance:"+deposit);
             }).start();
         }
         for(int i=0;i<100;i++){
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        int var = new Random().nextInt(100);
-                        Thread.sleep(var);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    double deposit = myAccount.withdraw(1000.00);
-                    System.out.println(Thread.currentThread().getName()+" balance:"+deposit);
-
+            new Thread(() -> {
+                try {
+                    int var = new Random().nextInt(100);
+                    Thread.sleep(var);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                double deposit = myAccount.withdraw(1000.00);
+                System.out.println(Thread.currentThread().getName()+" balance:"+deposit);
+
             }).start();
         }
     }
