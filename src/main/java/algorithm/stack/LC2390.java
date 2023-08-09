@@ -43,5 +43,12 @@ public class LC2390 {
         System.out.println(Arrays.toString(asteroidCollision(new int[]{10, 2, -5})));
         System.out.println(Arrays.toString(asteroidCollision(new int[]{5, -5})));
         System.out.println(Arrays.toString(asteroidCollision(new int[]{5, -10})));
+        String a = "2";
+        String b = "2";
+        if (a.equals("1")){
+            System.out.println(1);
+        }else if (b.equals("2")){
+            System.out.println(2);
+        }
     }
 }
