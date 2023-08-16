@@ -48,9 +48,27 @@ public class LC268 {
         return muti-sum;
     }
 
+    public static int diagonalSum(int[][] mat) {
+        int n = mat.length, ans = 0;
+
+        for (int i=0; i<n; i++){
+
+            ans += mat[i][i] + mat[i][n-1-i];
+
+        }
+        return (n&1) == 0 ? ans : ans-mat[n/2][n/2];
+    }
+
     public static void main(String[] args) {
-        int i = missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1});
-        System.out.println(i);
-        System.out.println(subtractProductAndSum(1));
+//        int i = missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1});
+//        System.out.println(i);
+//        System.out.println(subtractProductAndSum(1));
+        System.out.println(diagonalSum(new int[][]{{1,2,3},
+                {4,5,6},
+                {7,8,9}}));
+        System.out.println(diagonalSum(new int[][]{{6}}));
+        System.out.println(diagonalSum(new int[][]{{1,2,3,4},
+                {4,5,6,7},
+                {7,8,9,10}}));
     }
 }
