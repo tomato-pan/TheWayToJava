@@ -37,6 +37,28 @@ public class LC268 {
         //位运算
     }
 
+    public static int singleNumber1(int[] nums) {
+        //位运算
+        // 10进制转为3进制
+        // 3进制转为10进制
+        int[] cnt = new int[32];
+        for (int x : nums) {
+            for (int i = 0; i < 32; i++) {
+                if (((x >> i) & 1) == 1) {
+                    cnt[i]++;
+                }
+            }
+        }
+        int ans = 0;
+        for (int i = 0; i < 32; i++) {
+            if ((cnt[i] % 3 & 1) == 1) {
+                ans += (1 << i);
+            }
+        }
+        return ans;
+
+    }
+
     public static int subtractProductAndSum(int n) {
         int sum=0,muti=1;
         while (n!=0){
@@ -63,12 +85,15 @@ public class LC268 {
 //        int i = missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1});
 //        System.out.println(i);
 //        System.out.println(subtractProductAndSum(1));
-        System.out.println(diagonalSum(new int[][]{{1,2,3},
-                {4,5,6},
-                {7,8,9}}));
-        System.out.println(diagonalSum(new int[][]{{6}}));
-        System.out.println(diagonalSum(new int[][]{{1,2,3,4},
-                {4,5,6,7},
-                {7,8,9,10}}));
+//        System.out.println(diagonalSum(new int[][]{{1,2,3},
+//                {4,5,6},
+//                {7,8,9}}));
+//        System.out.println(diagonalSum(new int[][]{{6}}));
+//        System.out.println(diagonalSum(new int[][]{{1,2,3,4},
+//                {4,5,6,7},
+//                {7,8,9,10}}));
+
+        System.out.println(singleNumber1(new int[]{2, 2, 3, 2}));
+        System.out.println(singleNumber(new int[]{2, 2, 3, 2}));
     }
 }
