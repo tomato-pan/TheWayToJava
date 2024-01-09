@@ -1,7 +1,5 @@
 package algorithm.tree;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -128,7 +126,18 @@ public class binTree1 {
         inorderTraversal(root.right);
         return list;
     }
+    int countNodeNum(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftCount = count(root.left);
+        int rightCount = count(root.right);
+        // 后序位置
+        System.out.printf("节点 %s 的左子树有 %d 个节点，右子树有 %d 个节点",
+                root, leftCount, rightCount);
 
+        return leftCount + rightCount + 1;
+    }
     public static void main(String[] args) {
         TreeNode t1 = new TreeNode(1);
         TreeNode t4 = null;
@@ -153,5 +162,6 @@ public class binTree1 {
         System.out.println(a1.preOrderTravel(t1));
         System.out.println(a1.postOrderTravel(t1));
         System.out.println(a1.inOrderTravel(t1));
+        System.out.println(a1.countNodeNum(t1));
     }
 }
