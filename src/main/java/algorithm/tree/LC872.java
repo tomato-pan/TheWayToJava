@@ -25,6 +25,27 @@ public class LC872 {
         // 递归遍历当前节点的左右孩子节点
         return dfs(root.left, result) + dfs(root.right, result);
     }
+
+    // DFS: 深度优先搜索
+    public boolean leafSimilar2(TreeNode root1, TreeNode root2) {
+        List<Integer> l1=new ArrayList<>();
+        List<Integer> l2=new ArrayList<>();
+        dfs(root1,l1);
+        dfs(root2,l2);
+        return l1.equals(l2);
+    }
+
+    public void dfs(TreeNode root,List<Integer> arr){
+        if (root==null){
+            return;
+        }
+        if (root.right==null&&root.left==null){
+            arr.add(root.val);
+            return;
+        }
+        dfs(root.left,arr);
+        dfs(root.right,arr);
+    }
     public static void main(String[] args) throws Exception {
         LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<>(1000);
         for (int i = 0; i < 10; i++) {
