@@ -1,16 +1,31 @@
 package algorithm.linkList;
 
 
-
 public class LC142 {
-    public static void printListNode(ListNode listNode){
-        while(listNode != null){
+    public ListNode detectCycle(ListNode head) {
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                while (slow != head) {
+                    slow = slow.next;
+                    head = head.next;
+                }
+                return head;
+            }
+        }
+        return null;
+    }
+
+    public static void printListNode(ListNode listNode) {
+        while (listNode != null) {
             System.out.println(listNode.val);
-            listNode= listNode.next;
+            listNode = listNode.next;
         }
     }
 
-    public static  ListNode reverseNode(ListNode listNode){
+    public static ListNode reverseNode(ListNode listNode) {
         ListNode prev = null; //前指针节点
         ListNode curr = listNode; //当前指针节点
         //每次循环，都将当前节点指向它前面的节点，然后当前节点和前节点后移
