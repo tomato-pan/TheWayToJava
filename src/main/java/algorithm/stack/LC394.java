@@ -32,7 +32,7 @@ public class LC394 {
                 StringBuilder temp = stack_string.pop();
                 int count = stack_digit.pop();
                 for(int j = 0;j < count;j++){
-                    temp.append(tString.toString());
+                    temp.append(tString);
                 }
                 tString = temp;
             }else if('0' <= ch && ch <= '9'){

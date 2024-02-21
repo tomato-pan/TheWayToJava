@@ -1,18 +1,6 @@
 package algorithm.linkList;
 
-class ListNode {
-    int val;
-    ListNode next;
 
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-
-    ListNode() {
-
-    }
-}
 
 public class LC142 {
     public static void printListNode(ListNode listNode){

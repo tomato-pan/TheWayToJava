@@ -24,6 +24,20 @@ public class LC104 {
         dps(root.right,num+1);
     }
 
+    int maxDepth2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        // 利用定义，计算左右子树的最大深度
+        int leftMax = maxDepth2(root.left);
+        int rightMax = maxDepth2(root.right);
+        // 整棵树的最大深度等于左右子树的最大深度取最大值，
+        // 然后再加上根节点自己
+        int res = Math.max(leftMax, rightMax) + 1;
+
+        return res;
+    }
+
     public static void main(String[] args) {
         LC104 solution = new LC104();
         TreeNode root = new TreeNode(3);
@@ -32,6 +46,7 @@ public class LC104 {
         root.right.right = new TreeNode(9);
         System.out.println(solution.maxDepth(root));
         System.out.println(solution.maxDepth1(root));
+        System.out.println(solution.maxDepth2(root));
     }
 
 }
