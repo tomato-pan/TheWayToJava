@@ -1,4 +1,4 @@
-package fundamental.localThread;
+package fundamental.synchronizedDemo;
 
 public class SynchronizedDemo2 {
     public static boolean sign = false;

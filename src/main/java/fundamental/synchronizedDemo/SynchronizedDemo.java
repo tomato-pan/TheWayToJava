@@ -1,4 +1,4 @@
-package fundamental.localThread;
+package fundamental.synchronizedDemo;
 
 import java.util.Random;
 

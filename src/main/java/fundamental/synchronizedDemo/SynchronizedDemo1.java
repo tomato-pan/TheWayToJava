@@ -1,4 +1,4 @@
-package fundamental.localThread;
+package fundamental.synchronizedDemo;
 
 public class SynchronizedDemo1 {
     private static volatile int count=0;
