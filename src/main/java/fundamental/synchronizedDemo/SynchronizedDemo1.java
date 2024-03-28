@@ -16,7 +16,8 @@ public class SynchronizedDemo1 {
 
     }
     private static void add() {
-//        count++; volatile不能保证原子性
+//        count++;
+//        volatile不能保证原子性
         synchronized (SynchronizedDemo1.class){
             count++;
         }

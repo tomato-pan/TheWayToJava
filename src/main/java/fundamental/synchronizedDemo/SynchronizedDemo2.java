@@ -15,7 +15,7 @@ public class SynchronizedDemo2 {
            try {
                Thread.sleep(3000);
 
-           }catch (InterruptedException ig){}
+           }catch (InterruptedException ignored){}
            sign=true;
             System.out.println("vt.sign = true while (!sign)");
         });
