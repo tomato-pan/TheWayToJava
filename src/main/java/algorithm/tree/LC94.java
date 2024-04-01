@@ -4,7 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LC94 {
+    public List<Integer> inorderTraversal1(TreeNode root) {
+        List<Integer> res  =  new ArrayList<>();
+        inorder(res,root);
+        return res;
+    }
 
+    private void  inorder(List<Integer> res, TreeNode root) {
+        if (root==null)return;
+        inorder(res, root.left);
+        res.add(root.val);
+        inorder(res, root.right);
+    }
 
     public static List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) {
