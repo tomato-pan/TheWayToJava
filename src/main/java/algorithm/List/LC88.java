@@ -14,6 +14,7 @@ public class LC88 {
         }
 
     }
+
     public static void merge2(int[] nums1, int m, int[] nums2, int n) {
         int p1 = 0, p2 = 0;
         int[] sorted = new int[m + n];
@@ -35,8 +36,8 @@ public class LC88 {
         }
     }
     public static void main(String[] args) {
-        merge(new int[]{1,2,3,0,0,0}, 3,new int[]{2,5,6},3);
-        merge(new int[]{2,0}, 1,new int[]{1},1);
+        merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
+        merge(new int[]{2, 0}, 1, new int[]{1}, 1);
 
     }
 }
